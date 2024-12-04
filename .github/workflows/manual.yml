@@ -1,0 +1,16 @@
+name: Manual Workflow Dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      example_input:
+        description: 'Sr' # Descripción para el input
+        required: true # Si es obligatorio
+        default: 'patata' # Valor por defecto
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show input
+        run: echo "Input value: ${{ github.event.inputs.example_input }}"
