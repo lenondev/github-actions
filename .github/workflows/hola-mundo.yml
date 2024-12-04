@@ -1,16 +1,13 @@
-name: Aprendiendo Github Actions
-run-name: ¡Curso de Github Actions primer paso!
-
+name: Aprendiendo GitHub Actions
+run-name: Apartado - mi primer workflow
 on: [push]
-
 jobs:
-  hola-mundo-build:
+  hola-mundo:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: script-runing
-      run: python main.py
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Definir variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: Correr script
+        run: python hola_mundo.py
