@@ -1,5 +1,5 @@
 name: Aprendiendo GitHub Actions 3
-run-name: Apartado - Expresiones
+run-name: Apartado de Expresiones
 on:
   workflow_dispatch:
     inputs:
