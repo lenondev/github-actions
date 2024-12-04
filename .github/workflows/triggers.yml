@@ -1,16 +1,6 @@
 name: Aprendiendo Github Actions 2
 run-name: Apartado de Triggers
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - '**.py'
-  issues:
-    types:
-      - labeled
   workflow_dispatch:
     inputs:
       lenguaje_favorito:
@@ -27,8 +17,6 @@ on:
         required: true
         default: Juan
         type: string
-  schedule:
-    - cron:  '15 22 * * *'
 jobs:
   hola-mundo-manual:
     runs-on: ubuntu-latest
