@@ -1,5 +1,5 @@
-name: Saludo usando variables
-run-name: ¡Estoy aprendiendo a usar Variables!
+name: Aprendiendo Github Actions
+run-name: Apartado de Varialbles
 on:
   workflow_dispatch
 env:
