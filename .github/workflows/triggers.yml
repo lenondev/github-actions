@@ -1,4 +1,4 @@
-name: Utilizando triggers de Github Actions
+name: Aprendiendo Github Actions
 run-name: Apartado de Triggers
 
 on:
