@@ -1,5 +1,5 @@
 name: Manual Workflow Dispatch
-run-name: manualidad
+
 on:
   workflow_dispatch:
     inputs:
@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show input
-        run: echo "hola manual"
+        run: echo 'Input value: ${{ github.event.inputs.example_input }}'
