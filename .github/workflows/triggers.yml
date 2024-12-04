@@ -1,17 +1,16 @@
 name: Aprendiendo Github Actions 2
 run-name: Apartado de Triggers
-
 on:
   push:
     branches:
-      'aprendiendo-github-actions'
+      - master
   pull_request:
-    types: ['opened', 'sinchronized', 'reopened']
+    types: [opened, synchronize, reopened]
     paths:
-     - '**.py'
+      - '**.py'
   issues:
     types:
-      - 'labeled'
+      - labeled
   workflow_dispatch:
     inputs:
       lenguaje_favorito:
@@ -26,13 +25,15 @@ on:
       nombre:
         description: 'Tu nombre'
         required: true
-        default: Lenon
+        default: Juan
         type: string
+  schedule:
+    - cron:  '15 22 * * *'
 jobs:
   hola-mundo-manual:
     runs-on: ubuntu-latest
     steps:
-      - name: Chekout
+      - name: Checkout
         uses: actions/checkout@v3
       - name: Definir nombre
         run: echo "USERNAME=${{ inputs.nombre }}" >> $GITHUB_ENV
@@ -46,6 +47,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Definir variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
       - name: Correr script
         run: python hola_mundo.py
-
