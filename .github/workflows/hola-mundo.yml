@@ -1,4 +1,5 @@
-name: Run python script
+name: Aprendiendo Github Actions
+run-name: ¡Curso de Github Actions primer paso!
 
 on: [push]
 
